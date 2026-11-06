@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog",
+    "description": "Posts shown on /insights. Content uses the site's light markdown: ## headings, - bullets, > quotes, ![alt](image-url), **bold**, [link](url)."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "excerpt": {
+      "type": "text",
+      "maxLength": 500
+    },
+    "metaDescription": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "author": {
+      "type": "string",
+      "maxLength": 80,
+      "default": "Plural Dynamics"
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

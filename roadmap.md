@@ -1,0 +1,12 @@
+# Roadmap
+- [x] Restore Products (GymFlex, HotelPro, InsitSync, topE, Repairbox, Nooré), Expertise, Industries, Technologies pages
+- [x] Full dark theme across all pages
+- [x] Nav dropdowns for Services/Products/Expertise/Industries; all links working
+- [x] About page with real story, mission, core values, team (Azib Ali CEO, Tayyab Irfan COO, Waqas Qazi CTO)
+- [x] Mobile check of every page
+- [x] Homepage hero background video
+- [x] Restore original site wording, pages and menus (services, expertise, technologies, product details, blog)
+- [x] Brand red #E5252A, light/dark theme with system default and no flash
+- [x] Use client-approved contact details (address, phone, email)
+- [x] Check current website for Nooré, Repairbox, topE and add labeled draft introductions without unverified feature claims
+- [x] Remove Lovable tooling; self-hosted assets and standalone Vite config

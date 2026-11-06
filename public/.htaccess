@@ -1,0 +1,31 @@
+# Apache config for the static site on shared hosting (copied into the build output).
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Force HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Real files are served as they are
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # Prerendered pages: /about -> about.html, /products/gymflex -> products/gymflex.html
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+?)/?$ /$1.html [L]
+
+  # Everything else (blog posts, unknown URLs) loads the app shell, which routes in the browser
+  RewriteRule ^ /_shell.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2?|png|jpe?g|webp|gif|svg|mp4|webm)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

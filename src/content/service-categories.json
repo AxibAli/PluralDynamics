@@ -1,0 +1,471 @@
+{
+  "_note": "New copy written for the services mega menu and category pages; it is NOT from the original site. Items with a `page` field point to original pages in original-pages.json, whose wording stays untouched and is summarised from source on the category page.",
+  "categories": [
+    {
+      "slug": "cyber-security",
+      "title": "Cyber Security",
+      "headline": "Protect your data, your customers and your reputation",
+      "intro": "Security isn't a product you buy once. We help businesses find their weak spots, close them and keep watch, with practical measures sized for your real risk rather than a checklist copied from a bank.",
+      "metaDescription": "Cyber security services for growing businesses: threat detection, data encryption, network security and compliance audits from Plural Dynamics.",
+      "items": [
+        {
+          "id": "threat-detection",
+          "title": "Threat Detection",
+          "summary": "Spot suspicious activity early, before it turns into a breach.",
+          "body": [
+            "Most attacks leave traces long before any damage is done: odd login times, unusual data transfers, a run of failed passwords. We set up monitoring that watches for these signals across your applications, servers and cloud accounts.",
+            "When something looks wrong, the right people get an alert with enough context to act quickly. We keep tuning the rules over time, so your team isn't buried in false alarms."
+          ],
+          "points": ["Centralised log collection and monitoring", "Real-time alerts for suspicious behaviour", "Incident response playbooks", "Ongoing tuning to cut false positives"]
+        },
+        {
+          "id": "data-encryption",
+          "title": "Data Encryption",
+          "summary": "Keep sensitive information unreadable to anyone who shouldn't see it.",
+          "body": [
+            "Customer records, payment details and internal documents need protecting while they're stored and while they move between systems. We implement encryption at rest and in transit using current, well-tested standards.",
+            "Key management matters just as much: who can unlock the data, how often keys rotate, and what happens if one is exposed. We put those controls in place and document them clearly for your team and your auditors."
+          ],
+          "points": ["Encryption at rest and in transit", "Secure key management and rotation", "Database and file-level protection", "Documentation ready for audits"]
+        },
+        {
+          "id": "network-security",
+          "title": "Network Security",
+          "summary": "Lock down the routes attackers use to get in.",
+          "body": [
+            "Your network is the front door to everything else. We review firewalls, VPNs, Wi-Fi and remote access, then close the gaps: open ports, default passwords, flat networks where one infected laptop can reach every server.",
+            "We segment critical systems, secure remote access for distributed teams and set up regular checks, so new devices and quick changes don't quietly reopen old holes."
+          ],
+          "points": ["Firewall and VPN configuration review", "Network segmentation", "Secure remote access for hybrid teams", "Vulnerability scanning and hardening"]
+        },
+        {
+          "id": "compliance-risk-audits",
+          "title": "Compliance & Risk Audits",
+          "summary": "Know exactly where you stand, and what to fix first.",
+          "body": [
+            "Regulators and enterprise clients increasingly want to know how you protect data. We assess your systems and processes against the standards that apply to you, such as ISO 27001, GDPR or PCI DSS, and explain the findings in plain language.",
+            "You get a prioritised action plan that separates urgent risks from nice-to-haves, so your budget goes where it makes the biggest difference."
+          ],
+          "points": ["Gap analysis against recognised standards", "Risk scoring and prioritised fixes", "Policy and process review", "Audit-ready documentation"]
+        }
+      ]
+    },
+    {
+      "slug": "software-development",
+      "title": "Software Development",
+      "headline": "Software built around how your business really works",
+      "intro": "Off-the-shelf tools make you bend your process to fit them. We do it the other way round: we map your workflows first, then build web, desktop and enterprise software that removes busywork instead of adding to it.",
+      "metaDescription": "Custom software development, web applications, enterprise platforms, desktop software and API integration from Plural Dynamics.",
+      "items": [
+        { "id": "custom-software-solutions", "title": "Custom Applications", "page": "custom-software-solutions" },
+        { "id": "web-app-development", "title": "Web App Development", "page": "web-app-development" },
+        { "id": "enterprise-web-development", "title": "Enterprise Web Development", "page": "enterprise-web-development" },
+        { "id": "desktop-software-development", "title": "Desktop Software", "page": "desktop-software-development" },
+        {
+          "id": "api-integration",
+          "title": "API Integration",
+          "summary": "Get your systems talking to each other, and stop copying data between tabs.",
+          "body": [
+            "Most businesses run on a patchwork of tools: a CRM here, an accounting package there, and a spreadsheet holding it all together. We design clean, documented APIs and build the integrations that let data flow between them automatically and securely.",
+            "Whether you need to connect a payment gateway, sync stock with a marketplace or open your platform to partners, we handle authentication, rate limits, error handling and monitoring, so the connection keeps working when nobody is watching."
+          ],
+          "points": ["REST and GraphQL API design", "Payment, CRM and ERP integrations", "Secure OAuth and token authentication", "Versioning, documentation and monitoring"]
+        }
+      ]
+    },
+    {
+      "slug": "app-development",
+      "title": "App Development",
+      "headline": "Mobile apps people actually keep on their home screen",
+      "intro": "We design and build iOS, Android and cross-platform apps for businesses that need more than a polished prototype. Every app is planned around real user journeys, tested on real devices and supported long after launch day.",
+      "metaDescription": "iOS, Android, Flutter and React Native app development by Plural Dynamics. Fast, well-designed mobile apps with long-term support.",
+      "items": [
+        { "id": "ios-development", "title": "iOS Development", "page": "ios-development" },
+        { "id": "android-development", "title": "Android Development", "page": "android-development" },
+        {
+          "id": "flutter-development",
+          "title": "Flutter Development",
+          "summary": "One codebase, two app stores, and an interface that feels at home on both.",
+          "body": [
+            "Flutter lets us write your app once and ship it to iOS and Android without the look and feel drifting apart. It draws every pixel itself, so animations stay smooth and your brand looks the same on the latest iPhone and on a budget Android phone.",
+            "We reach for Flutter when speed to market matters and most features are shared across platforms: booking apps, field-service tools, customer portals and internal dashboards. You get one team, one release cycle and noticeably lower maintenance costs."
+          ],
+          "points": ["Single codebase for iOS and Android", "Custom, brand-matched UI", "Firebase and REST API integration", "App Store and Play Store release support"]
+        },
+        {
+          "id": "react-native-development",
+          "title": "React Native Development",
+          "summary": "Cross-platform apps built on the JavaScript stack your web team already knows.",
+          "body": [
+            "React Native renders real native components, so your app scrolls, swipes and responds the way users expect on each platform. Because it shares a language and mindset with React on the web, we can often reuse business logic between your website and your app.",
+            "It suits products that need to move fast, such as MVPs, marketplaces and content platforms. When a feature needs raw native power, like camera processing, Bluetooth or background tasks, we write that module natively and plug it in."
+          ],
+          "points": ["Shared logic across web and mobile", "Native modules where performance matters", "Over-the-air updates for quick fixes", "Upgrades as the framework evolves"]
+        },
+        { "id": "hybrid-app-development", "title": "Hybrid App Development", "page": "hybrid-app-development" },
+        { "id": "mobile-app-development", "title": "Mobile App Strategy", "page": "mobile-app-development" }
+      ]
+    },
+    {
+      "slug": "erp-implementation",
+      "title": "ERP Implementation",
+      "headline": "One system for finance, people and operations",
+      "intro": "When every department keeps its own records, decisions slow down and errors creep in. We implement and tailor ERP systems that give you one trusted view of the business, without forcing your team into software that doesn't fit.",
+      "metaDescription": "ERP implementation, process automation, system integration and data migration. Plural Dynamics builds ERP systems tailored to your operations.",
+      "items": [
+        { "id": "custom-erp-development", "title": "Custom ERP Development", "page": "custom-erp-development" },
+        {
+          "id": "process-automation",
+          "title": "Process Automation",
+          "summary": "Hand the repetitive work to software and give your people their afternoons back.",
+          "body": [
+            "Approvals waiting in inboxes, invoices typed in twice, reports rebuilt by hand every Monday: these small delays add up. We map where the time actually goes, then automate the steps that don't need human judgement.",
+            "The result is fewer errors, faster turnaround and a clear audit trail. Your team stays in control, because automation handles the routine and anything unusual is flagged for a person to review."
+          ],
+          "points": ["Workflow mapping and bottleneck analysis", "Automated approvals and notifications", "Scheduled reports and documents", "Exceptions routed for human review"]
+        },
+        {
+          "id": "system-integration",
+          "title": "System Integration",
+          "summary": "Connect your ERP with the tools your teams already rely on.",
+          "body": [
+            "An ERP only pays off when it sits at the centre of your operations. We connect it to your online store, payroll, banking, CRM and warehouse systems, so information is entered once and shows up everywhere it's needed.",
+            "Each integration is planned around data ownership, meaning which system is the source of truth for customers, stock or prices. That keeps records consistent and stops conflicts from piling up quietly in the background."
+          ],
+          "points": ["E-commerce, CRM and payroll connectors", "Banking and payment reconciliation", "Clear source-of-truth rules", "Sync monitoring and error alerts"]
+        },
+        {
+          "id": "data-migration",
+          "title": "Data Migration",
+          "summary": "Move years of records into your new system without losing a single line.",
+          "body": [
+            "A new platform is the moment old data problems surface: duplicates, missing fields, formats that don't match. We clean, map and validate your data before it moves, so you start the new system with information you can trust.",
+            "Every migration is rehearsed on a test environment, reconciled against the source and scheduled to keep downtime low. You sign off on the numbers before anything goes live."
+          ],
+          "points": ["Data audit, cleansing and de-duplication", "Field mapping between old and new systems", "Trial runs and reconciliation reports", "Low-downtime cut-over plan"]
+        }
+      ]
+    },
+    {
+      "slug": "cloud-services",
+      "title": "Cloud Services",
+      "headline": "Cloud infrastructure that scales when you do",
+      "intro": "Whether you're moving off ageing servers or building cloud-native from day one, we design cloud environments that are fast, secure and sensibly priced, with no surprise bill at the end of the month.",
+      "metaDescription": "Cloud migration, cloud software development, serverless computing and enterprise cloud services from Plural Dynamics.",
+      "items": [
+        { "id": "cloud-software-development", "title": "Cloud Software Development", "page": "cloud-software-development" },
+        { "id": "enterprise-cloud-computing-services", "title": "Enterprise Cloud Computing", "page": "enterprise-cloud-computing-services" },
+        {
+          "id": "cloud-migration",
+          "title": "Cloud Migration",
+          "summary": "Move from on-premise servers to the cloud with a plan, not a leap of faith.",
+          "body": [
+            "We start by auditing what you run today: applications, databases, dependencies and the quirks nobody wrote down. Then we choose the right path for each workload, whether that's lift-and-shift, re-platforming or a rebuild.",
+            "Migrations happen in stages with a rollback plan at every step, so the business keeps running while we work. Once you're live, we tune performance and costs so the cloud genuinely costs less than the servers it replaced."
+          ],
+          "points": ["Infrastructure and dependency audit", "AWS, Azure and Google Cloud", "Phased migration with rollback plans", "Post-migration cost tuning"]
+        },
+        {
+          "id": "serverless-computing",
+          "title": "Serverless Computing",
+          "summary": "Pay for the work your app does, not for servers sitting idle.",
+          "body": [
+            "Serverless architecture runs your code only when it's needed: when an order is placed, a file is uploaded or a report is requested. There are no servers to patch, and capacity scales automatically with traffic.",
+            "It's a great fit for event-driven features, APIs with unpredictable demand and background jobs. We build serverless systems with proper logging and cost alerts, so they stay predictable as you grow."
+          ],
+          "points": ["Event-driven functions and APIs", "Automatic scaling with demand", "Lower costs for spiky workloads", "Logging, monitoring and cost alerts"]
+        }
+      ]
+    },
+    {
+      "slug": "artificial-intelligence",
+      "title": "Artificial Intelligence",
+      "headline": "Practical AI that solves real business problems",
+      "intro": "We skip the hype and focus on where AI genuinely earns its keep: forecasting demand, answering customer questions, reading documents and automating decisions that follow clear patterns.",
+      "metaDescription": "AI development services: machine learning, predictive analytics, AI chatbots and intelligent process automation built on your business data.",
+      "items": [
+        {
+          "id": "machine-learning",
+          "title": "Machine Learning Solutions",
+          "summary": "Models trained on your data to make the calls your team makes every day.",
+          "body": [
+            "Machine learning works best on focused, well-defined problems: classifying support tickets, flagging suspicious transactions, recommending products or estimating delivery times. Before writing any model code, we check whether your data can actually support the goal.",
+            "Once a model proves itself, we deploy it into your existing systems with monitoring in place, so you can see how it performs in the real world and retrain it as patterns change."
+          ],
+          "points": ["Feasibility check on your data", "Custom model training and evaluation", "Deployment into your apps", "Monitoring and retraining"]
+        },
+        {
+          "id": "predictive-analytics",
+          "title": "Predictive Analytics",
+          "summary": "Plan ahead with forecasts grounded in your own history.",
+          "body": [
+            "Your past sales, bookings and customer behaviour hold patterns that point to what's likely to happen next. We build forecasting models that predict demand, churn, cash flow or stock needs, with honest confidence ranges.",
+            "Forecasts appear where decisions are made, inside the dashboards and reports your managers already use, so planning rests on evidence rather than gut feel."
+          ],
+          "points": ["Demand and sales forecasting", "Customer churn prediction", "Inventory and resource planning", "Forecasts inside your dashboards"]
+        },
+        {
+          "id": "ai-chatbots",
+          "title": "AI Chatbots",
+          "summary": "Answer customers instantly, day or night, in a voice that sounds like you.",
+          "body": [
+            "Modern AI assistants do far more than reply with canned answers. Connected to your knowledge base, order system or booking calendar, they resolve common questions on the spot and pass complex cases to a person with the full conversation attached.",
+            "We train each chatbot on your own content, set clear limits on what it can say and do, and review real conversations to keep improving the experience."
+          ],
+          "points": ["Website, WhatsApp and in-app chat", "Trained on your FAQs and documents", "Smooth hand-off to your team", "Conversation analytics"]
+        },
+        {
+          "id": "intelligent-process-automation",
+          "title": "Intelligent Process Automation",
+          "summary": "Automation that can read, sort and decide, not just click buttons.",
+          "body": [
+            "Traditional automation breaks the moment a document arrives in an unexpected format. By pairing workflow automation with AI that understands text and images, we automate jobs like processing invoices, sorting emails and checking forms.",
+            "Every automated decision is logged, and anything uncertain goes to a person for review. You gain speed without giving up control or accountability."
+          ],
+          "points": ["Invoice and document data extraction", "Email and request triage", "Rules plus AI for smarter decisions", "Human review for edge cases"]
+        }
+      ]
+    },
+    {
+      "slug": "staff-augmentation",
+      "title": "Staff Augmentation",
+      "headline": "Skilled engineers on your team, without the hiring marathon",
+      "intro": "Need a React developer next week or a full product squad next month? We provide vetted engineers, designers and testers who slot into your workflow, your tools and your time zone.",
+      "metaDescription": "IT staff augmentation and dedicated development teams. Hire vetted developers, designers and QA engineers on flexible terms.",
+      "items": [
+        {
+          "id": "on-demand-experts",
+          "title": "On-Demand Experts",
+          "summary": "Bring in specialist skills exactly when a project needs them.",
+          "body": [
+            "Sometimes you need one particular skill for a few weeks: a cloud architect to review your setup, a senior .NET engineer to unblock a release, or a UX designer to rethink onboarding. We match you with the right specialist quickly.",
+            "Every expert is briefed before day one and works alongside your team, sharing what they know so the knowledge stays with you after the engagement ends."
+          ],
+          "points": ["Senior specialists across our stack", "Fast matching and onboarding", "Knowledge transfer built in", "Short or long engagements"]
+        },
+        {
+          "id": "flexible-hiring-models",
+          "title": "Flexible Hiring Models",
+          "summary": "Hourly, monthly or per project: choose the model that suits your budget.",
+          "body": [
+            "Not every project fits the same contract. We offer time-and-materials for evolving work, monthly retainers for steady capacity and fixed-price engagements when the scope is clear.",
+            "Whichever model you pick, you get transparent timesheets, regular progress reports and the freedom to change course as your needs shift."
+          ],
+          "points": ["Hourly and monthly options", "Fixed price for clear scopes", "Transparent reporting", "Easy to switch models"]
+        },
+        {
+          "id": "dedicated-teams",
+          "title": "Dedicated Teams",
+          "summary": "A complete product team that works only on your project.",
+          "body": [
+            "A dedicated team gives you developers, a designer, QA and a project lead who know your product inside out. They join your stand-ups, use your tools and build the kind of context that makes every sprint faster than the last.",
+            "You keep full control of priorities while we handle recruitment, retention, equipment and HR, so you can grow capacity without growing overheads."
+          ],
+          "points": ["Cross-functional team around your goals", "Works in your tools and rituals", "Stable members for continuity", "Scale up or down with the roadmap"]
+        },
+        {
+          "id": "it-outsourcing",
+          "title": "IT Outsourcing",
+          "summary": "Hand over a whole project or function to a team that owns the outcome.",
+          "body": [
+            "If you'd rather focus on running the business, we can take full responsibility for a project or an ongoing IT function, from planning and development through testing, deployment and support.",
+            "You get one point of contact, agreed milestones and clear reporting, backed by a team that has delivered software for clients across many industries and time zones."
+          ],
+          "points": ["End-to-end project ownership", "Agreed milestones and service levels", "Single point of contact", "Lower cost than hiring in-house"]
+        }
+      ]
+    },
+    {
+      "slug": "it-assurance",
+      "title": "IT Assurance",
+      "headline": "Reliable systems, tested software and support that answers",
+      "intro": "Downtime costs money and buggy releases cost trust. We keep your systems healthy with responsive support, thorough testing and monitoring that catches problems before your customers notice them.",
+      "metaDescription": "IT support services, software testing and QA, security audits and performance monitoring to keep your systems reliable and secure.",
+      "items": [
+        { "id": "it-support-services", "title": "IT Support Services", "page": "it-support-services" },
+        {
+          "id": "qa-testing",
+          "title": "System Validation & Testing",
+          "summary": "Catch the bugs before your users do.",
+          "body": [
+            "We test the way your customers actually use your product: across browsers and devices, and through the awkward edge cases real people stumble into. Exploratory testing finds the surprises, and automated suites make sure old bugs never come back.",
+            "Testing runs alongside development rather than at the very end, so issues are cheaper to fix and release days stop being stressful."
+          ],
+          "points": ["Manual and automated testing", "Cross-browser and device coverage", "Regression suites in your pipeline", "Clear, reproducible bug reports"]
+        },
+        {
+          "id": "security-audits",
+          "title": "Security Audits",
+          "summary": "An honest review of how secure your application really is.",
+          "body": [
+            "We review your code, configuration and infrastructure for the weaknesses attackers look for first: injection flaws, broken access control, exposed secrets and outdated dependencies.",
+            "Findings are ranked by real-world risk and come with specific fixes. Once changes are made, we retest, so you have evidence the issues are closed."
+          ],
+          "points": ["Application and code review", "Dependency and configuration checks", "Risk-ranked findings with fixes", "Retesting after remediation"]
+        },
+        {
+          "id": "performance-monitoring",
+          "title": "Performance Monitoring",
+          "summary": "Know the moment your site or app slows down, and why.",
+          "body": [
+            "Slow pages lose customers quietly. We set up monitoring for uptime, response times, errors and server health, with dashboards that show what's happening right now and alerts when limits are crossed.",
+            "When performance dips, we trace the cause, whether it's a heavy database query, a memory leak or a third-party script, and fix it at the source instead of throwing more hardware at it."
+          ],
+          "points": ["Uptime and response-time monitoring", "Error tracking and alerts", "Database and server tuning", "Monthly health reports"]
+        }
+      ]
+    },
+    {
+      "slug": "ecommerce",
+      "title": "e-Commerce",
+      "headline": "Online stores built to sell, not just to look good",
+      "intro": "From a first Shopify store to a high-volume Magento catalogue, we build e-commerce experiences that load fast, rank well in search and make checking out effortless.",
+      "metaDescription": "E-commerce development on Shopify, WordPress, Magento and Joomla. Fast, SEO-friendly online stores that turn visitors into customers.",
+      "items": [
+        { "id": "wordpress-development", "title": "WordPress Development", "page": "wordpress-development" },
+        { "id": "shopify", "title": "Shopify Development", "page": "shopify" },
+        {
+          "id": "magento-development",
+          "title": "Magento Development",
+          "summary": "Enterprise-grade commerce for large catalogues and complex pricing.",
+          "body": [
+            "Magento (Adobe Commerce) comes into its own when a store outgrows simpler platforms: thousands of products, several storefronts, B2B price lists or multiple currencies. We build, customise and extend Magento stores that stay fast under real traffic.",
+            "We also take over existing Magento sites, upgrading versions, removing extensions that drag performance down and fixing checkout issues that quietly cost you sales."
+          ],
+          "points": ["Custom themes and extensions", "Multi-store and multi-currency", "ERP, POS and marketplace integrations", "Upgrades, speed and security fixes"]
+        },
+        {
+          "id": "joomla-development",
+          "title": "Joomla Development",
+          "summary": "Flexible, content-rich websites on a proven open-source platform.",
+          "body": [
+            "Joomla is a solid choice for sites that combine content, memberships and online sales. We build custom templates and components, and set up shop extensions that sit naturally within the rest of your site.",
+            "For existing Joomla websites, we handle version upgrades, security patches and performance work, so your site stays stable and safe."
+          ],
+          "points": ["Custom templates and components", "Shop and membership extensions", "Version upgrades and migrations", "Security hardening and maintenance"]
+        }
+      ]
+    },
+    {
+      "slug": "strategy-consulting",
+      "title": "Strategy & Consulting",
+      "headline": "Clear technology decisions, backed by people who build",
+      "intro": "Before you invest in new software, it pays to know what to build, in what order and why. Our consultants have shipped real products, so the advice you get is practical, costed and ready to act on.",
+      "metaDescription": "IT strategy and consulting: technology roadmaps, digital transformation, product development and agile delivery from Plural Dynamics.",
+      "items": [
+        {
+          "id": "it-roadmap-planning",
+          "title": "IT Roadmap & Planning",
+          "summary": "A step-by-step plan that ties technology spending to business goals.",
+          "body": [
+            "We look at where your business is heading, what your current systems can and can't do, and where the biggest gains are hiding. The outcome is a phased roadmap with priorities, timelines and realistic budgets.",
+            "Each phase delivers something useful on its own, so you see a return early and can adjust the plan as the business changes."
+          ],
+          "points": ["Current-state technology review", "Prioritised, phased roadmap", "Budget and resource estimates", "Regular reviews as goals change"]
+        },
+        { "id": "product-development", "title": "Product Development", "page": "product-development" },
+        { "id": "agile-product-development", "title": "Agile Product Delivery", "page": "agile-product-development" },
+        {
+          "id": "digital-transformation",
+          "title": "Digital Transformation",
+          "summary": "Replace paper, spreadsheets and workarounds with systems that scale.",
+          "body": [
+            "Real transformation is about how people work, not just which software they use. We find the manual processes holding you back and replace them, step by step, with digital tools your team will actually adopt.",
+            "Training and change management are part of the plan from the start, so new systems become everyday habits rather than expensive shelfware."
+          ],
+          "points": ["Process discovery and digitisation", "Modern tools that replace manual work", "Staff training and change support", "Measurable results at every stage"]
+        }
+      ]
+    },
+    {
+      "slug": "data-analytics",
+      "title": "Data Analytics",
+      "headline": "Turn scattered data into decisions you can defend",
+      "intro": "Your business already produces the numbers you need. We bring them together, clean them up and present them in dashboards that answer real questions, so nobody has to export another spreadsheet.",
+      "metaDescription": "Data analytics services: business intelligence, big data processing, real-time reporting and data visualisation dashboards.",
+      "items": [
+        {
+          "id": "business-intelligence",
+          "title": "Business Intelligence",
+          "summary": "One reliable source for the numbers that run your business.",
+          "body": [
+            "When sales, finance and operations each report different figures, meetings turn into debates about whose spreadsheet is right. We build a central data warehouse that pulls from all your systems and applies agreed definitions to every metric.",
+            "On top of it, managers get self-service reports in tools such as Power BI, so they can answer their own questions without waiting on IT."
+          ],
+          "points": ["Central data warehouse", "Agreed KPI definitions", "Power BI and self-service reports", "Scheduled data refreshes"]
+        },
+        {
+          "id": "big-data-processing",
+          "title": "Big Data Processing",
+          "summary": "Handle millions of records without slowing everything else down.",
+          "body": [
+            "Event logs, IoT readings and transaction histories can arrive too fast and in too much volume for an ordinary database. We design pipelines that collect, clean and store that data efficiently.",
+            "Processing is built to scale out, so handling more data means adding capacity, not rewriting the system."
+          ],
+          "points": ["Scalable data pipelines", "Batch and stream processing", "Cleansing and enrichment", "Cost-efficient cloud storage"]
+        },
+        {
+          "id": "real-time-reporting",
+          "title": "Real-Time Reporting",
+          "summary": "See what's happening now, not what happened last week.",
+          "body": [
+            "For operations that move quickly, such as orders, deliveries, bookings and support queues, yesterday's report is already out of date. We build live dashboards that update as events happen.",
+            "Alerts notify the right person when a number crosses a threshold, so issues are dealt with while they're still small."
+          ],
+          "points": ["Live operational dashboards", "Threshold alerts and notifications", "Mobile-friendly views", "Connected to your existing systems"]
+        },
+        {
+          "id": "data-visualization",
+          "title": "Data Visualization",
+          "summary": "Charts that make the answer obvious at a glance.",
+          "body": [
+            "A good chart tells you something in seconds; a poor one hides it. We design dashboards and visual reports with the right chart for each question, consistent colours and clear labels.",
+            "Every view is built around the decision it supports, so executives, managers and analysts each see what matters to them."
+          ],
+          "points": ["Executive and team dashboards", "Interactive filters and drill-downs", "Clear, accessible chart design", "Export to PDF and slides"]
+        }
+      ]
+    },
+    {
+      "slug": "design-solutions",
+      "title": "Design Solutions",
+      "headline": "Design and marketing that make people stop and click",
+      "intro": "Good design earns trust before a single word is read. We create websites, interfaces, brand identities and campaigns that look sharp, feel effortless and bring the right customers to your door.",
+      "metaDescription": "UI/UX design, website design, branding, graphic design and digital marketing services from Plural Dynamics.",
+      "items": [
+        {
+          "id": "website-designing",
+          "title": "Website Designing",
+          "summary": "A website that explains what you do and turns visitors into enquiries.",
+          "body": [
+            "Your website is often the first conversation a customer has with you. We design responsive sites with clear messaging, quick load times and calls to action placed exactly where people are ready to act.",
+            "Every page is built with search in mind, with clean structure, proper headings and fast performance, so the right audience can find you."
+          ],
+          "points": ["Responsive, mobile-first layouts", "Conversion-focused page structure", "SEO-friendly build", "Easy-to-update content"]
+        },
+        {
+          "id": "ui-ux-design",
+          "title": "UI/UX Design",
+          "summary": "Interfaces that feel obvious, because the hard thinking happened first.",
+          "body": [
+            "We start with the people who'll use your product: what they're trying to get done and where they get stuck. Research, user flows and wireframes come before colours and fonts.",
+            "Interactive prototypes let you test ideas with real users before development begins, which saves weeks of rework and produces a product people enjoy using."
+          ],
+          "points": ["User research and journey mapping", "Wireframes and clickable prototypes", "Design systems for consistency", "Usability testing with real users"]
+        },
+        {
+          "id": "graphic-designing",
+          "title": "Graphic Designing",
+          "summary": "Visuals that keep your brand consistent everywhere it appears.",
+          "body": [
+            "From social posts and brochures to presentations and packaging, we create graphics that clearly belong to the same brand.",
+            "We hand over ready-to-use files and editable templates, so your team can produce on-brand content quickly without starting from scratch every time."
+          ],
+          "points": ["Social media and ad creatives", "Brochures, flyers and presentations", "Infographics and illustrations", "Editable brand templates"]
+        },
+        { "id": "branding", "title": "Branding", "page": "branding" },
+        { "id": "digital-marketing", "title": "Digital Marketing", "page": "digital-marketing" }
+      ]
+    }
+  ]
+}

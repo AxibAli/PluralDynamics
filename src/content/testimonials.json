@@ -1,0 +1,40 @@
+{
+  "_note": "SAMPLE ENTRIES ONLY: placeholders for layout, not real client feedback. No reviews exist in the original site content (its testimonials page held template filler). Replace each entry with a real, approved client quote, add an `avatar` image URL if the client agrees, and set \"draft\": false. Draft entries always render with a visible 'Sample review' label so they are never mistaken for genuine feedback.",
+  "testimonials": [
+    {
+      "draft": true,
+      "quote": "Before GymFlex, renewals and payments lived in three different notebooks. Now members book classes from their phones, invoices go out on their own, and I can see the whole month's revenue in one screen. Setup took a week, not a quarter.",
+      "name": "Ayesha Rahman",
+      "role": "Owner, Fitness Studio",
+      "avatar": ""
+    },
+    {
+      "draft": true,
+      "quote": "The team asked the right questions before writing any code. Our front desk was trained in a single afternoon, and check-ins that used to take ten minutes now take two. Support has been quick every time we've needed it.",
+      "name": "Daniel Brooks",
+      "role": "General Manager, Boutique Hotel",
+      "avatar": ""
+    },
+    {
+      "draft": true,
+      "quote": "We needed an ERP that fit how we actually work, not the other way round. Plural Dynamics mapped our approval process, automated the boring parts and migrated six years of records without losing a line.",
+      "name": "Imran Siddiqui",
+      "role": "Operations Director, Distribution Company",
+      "avatar": ""
+    },
+    {
+      "draft": true,
+      "quote": "Clear weekly demos, honest estimates and no surprises on the invoice. When our priorities changed mid-project, they adjusted the plan the same day. Our app launched on both stores right on schedule.",
+      "name": "Sophia Martinez",
+      "role": "Founder, Startup",
+      "avatar": ""
+    },
+    {
+      "draft": true,
+      "quote": "Our new store loads noticeably faster and the checkout is much simpler. Within the first two months, abandoned carts dropped and repeat orders went up. It finally feels like a site we're proud to send customers to.",
+      "name": "Hamza Qureshi",
+      "role": "E-commerce Manager, Retail Brand",
+      "avatar": ""
+    }
+  ]
+}

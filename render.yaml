@@ -1,0 +1,59 @@
+# Render Blueprint for the Strapi CMS in cms/. Secrets marked sync: false are typed into the
+# Render dashboard when you create the Blueprint; never commit them.
+# Strapi's admin build needs ~1 GB RAM, so this uses the Starter plan (the free 512 MB plan
+# usually runs out of memory during `strapi build`).
+services:
+  - type: web
+    name: pluraldynamics-cms
+    runtime: node
+    plan: starter
+    rootDir: cms
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /_health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      - key: CORS_ORIGIN
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: APP_KEYS
+        generateValue: true
+      - key: API_TOKEN_SALT
+        generateValue: true
+      - key: ADMIN_JWT_SECRET
+        generateValue: true
+      - key: TRANSFER_TOKEN_SALT
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ENCRYPTION_KEY
+        generateValue: true
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: CLOUDINARY_NAME
+        sync: false
+      - key: CLOUDINARY_KEY
+        sync: false
+      - key: CLOUDINARY_SECRET
+        sync: false
+      - key: CLOUDINARY_FOLDER
+        value: pluraldynamics
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "465"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: CONTACT_TO
+        value: contact@pluraldynamics.com
+      # One-time import of the old site's content; remove after the logs say "done".
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        value: pluraldynamics

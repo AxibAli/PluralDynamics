@@ -1,0 +1,32 @@
+{
+  "noore": {
+    "slug": "noore",
+    "title": "Nooré",
+    "blocks": [
+      { "type": "h2", "text": "Discover Nooré" },
+      { "type": "p", "text": "Nooré is part of the Plural Dynamics product portfolio. Contact our team to discuss your requirements and learn whether Nooré is the right fit for your next project." },
+      { "type": "h3", "text": "Product introduction — draft" },
+      { "type": "p", "text": "This introduction is awaiting product-team confirmation. Features, availability and pricing have not yet been confirmed." }
+    ]
+  },
+  "repairbox": {
+    "slug": "repairbox",
+    "title": "Repairbox",
+    "blocks": [
+      { "type": "h2", "text": "Explore Repairbox" },
+      { "type": "p", "text": "Explore Repairbox with Plural Dynamics. Tell us about the challenges your business is facing, and our team can discuss the product with you and help clarify the next steps." },
+      { "type": "h3", "text": "Product introduction — draft" },
+      { "type": "p", "text": "This introduction is awaiting product-team confirmation. Features, availability and pricing have not yet been confirmed." }
+    ]
+  },
+  "tope": {
+    "slug": "tope",
+    "title": "topE",
+    "blocks": [
+      { "type": "h2", "text": "Meet topE" },
+      { "type": "p", "text": "topE is listed in the Plural Dynamics product portfolio. Start a conversation with our team about your goals, questions and requirements to find out more about the product." },
+      { "type": "h3", "text": "Product introduction — draft" },
+      { "type": "p", "text": "This introduction is awaiting product-team confirmation. Features, availability and pricing have not yet been confirmed." }
+    ]
+  }
+}

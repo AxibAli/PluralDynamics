@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "leads",
+  "info": {
+    "singularName": "lead",
+    "pluralName": "leads",
+    "displayName": "Lead",
+    "description": "Contact-form submissions from the website. Each new lead is emailed by the 'Email new leads' webhook."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 80
+    },
+    "lastName": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "maxLength": 200
+    },
+    "phone": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "country": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "projectType": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "message": {
+      "type": "text",
+      "required": true,
+      "maxLength": 5000
+    },
+    "page": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "submittedAt": {
+      "type": "datetime"
+    },
+    "emailed": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

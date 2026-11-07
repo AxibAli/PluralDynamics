@@ -1,10 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 import { listBlogs } from "@/lib/cms";
 import { About, Articles, Cta, Hero, IndustriesGrid, Pricing, ProductsShowcase, Services, Tech, Why } from "@/components/site/Sections";
 
 export const Route = createFileRoute("/")({
+  loader: () => listBlogs(),
   head: () => ({
     meta: [
       { title: "Plural Dynamics — IT Solutions For Your Company" },
@@ -19,8 +19,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  // Fetched in the browser so the prerendered page stays current after dashboard edits.
-  const blogs = useQuery({ queryKey: ["blogs"], queryFn: listBlogs, staleTime: 30_000 });
+  const blogs = Route.useLoaderData();
   return (
     <SiteLayout>
       <Hero />
@@ -31,7 +30,7 @@ function Index() {
       <Tech />
       <Why />
       <Pricing />
-      <Articles posts={blogs.data ?? []} limit={3} />
+      <Articles posts={blogs} limit={3} />
       <Cta />
     </SiteLayout>
   );

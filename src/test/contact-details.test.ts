@@ -12,11 +12,8 @@ describe("client-approved contact details", () => {
       "H-3115 King Cottages, Gulistan-e-Johar Block 7, Karachi, Pakistan",
     ]);
   });
-  it("uses the supplied Firenze phone number; the other two are marked placeholders", () => {
-    const [de, it_, pk] = contact.offices;
-    expect(it_?.phone).toBe("+39 344 658 0188");
-    expect(it_ && "placeholder" in it_).toBe(false);
-    expect([de, pk].every((o) => o && "placeholder" in o && o.placeholder)).toBe(true);
+  it("uses the supplied phone numbers", () => {
+    expect(contact.offices.map((o) => o.phone)).toEqual(["+49 1515 6228596", "+39 344 658 0188", "+92 331 3006368"]);
   });
   it("builds dialable tel: links", () => {
     expect(telHref("+39 344 658 0188")).toBe("tel:+393446580188");

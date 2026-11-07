@@ -2,10 +2,11 @@ import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
+import { nitro } from "nitro/vite";
 import { defineConfig, type PluginOption } from "vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
-export default defineConfig(() => {
+export default defineConfig(({ command }) => {
   const plugins: PluginOption[] = [
     tailwindcss(),
     tsConfigPaths({ projects: ["./tsconfig.json"] }),
@@ -17,13 +18,12 @@ export default defineConfig(() => {
       },
       // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
       server: { entry: "server" },
-      // Static build for shared hosting: every page is prerendered to HTML at build time, and
-      // _shell.html serves URLs that only exist at runtime (blog posts). Content comes from
-      // the Strapi CMS in cms/ (deployed on Render) at VITE_STRAPI_URL.
-      spa: { enabled: true, maskPath: "/_shell" }, // own path, so it does not replace the prerendered home page
-      prerender: { enabled: true, crawlLinks: true, failOnError: true, autoSubfolderIndex: false },
     }),
   ];
+
+  // Nitro bundles the Node.js server (.output/) that serves the site, the /admin dashboard
+  // and the API in one process: `npm run build && npm start`. Only needed for builds.
+  if (command === "build") plugins.push(nitro());
 
   plugins.push(viteReact());
 

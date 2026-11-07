@@ -12,16 +12,21 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SlugRouteImport } from './routes/$slug'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ExpertiseRouteImport } from './routes/expertise'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TechnologiesRouteImport } from './routes/technologies'
 import { Route as WhyChooseUsRouteImport } from './routes/why-choose-us'
+import { Route as ApiBlogsRouteImport } from './routes/api/blogs'
+import { Route as ApiSolutionsRouteImport } from './routes/api/solutions'
 import { Route as InsightsIndexRouteImport } from './routes/insights.index'
 import { Route as InsightsSlugRouteImport } from './routes/insights.$slug'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
+import { Route as ApiBlogSlugRouteImport } from './routes/api/blog.$slug'
+import { Route as ApiUploadsFileRouteImport } from './routes/api/uploads.$file'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -36,6 +41,11 @@ const SlugRoute = SlugRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -68,6 +78,16 @@ const WhyChooseUsRoute = WhyChooseUsRouteImport.update({
   path: '/why-choose-us',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiBlogsRoute = ApiBlogsRouteImport.update({
+  id: '/api/blogs',
+  path: '/api/blogs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSolutionsRoute = ApiSolutionsRouteImport.update({
+  id: '/api/solutions',
+  path: '/api/solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InsightsIndexRoute = InsightsIndexRouteImport.update({
   id: '/insights/',
   path: '/insights/',
@@ -88,52 +108,77 @@ const ProductsSlugRoute = ProductsSlugRouteImport.update({
   path: '/products/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiBlogSlugRoute = ApiBlogSlugRouteImport.update({
+  id: '/api/blog/$slug',
+  path: '/api/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiUploadsFileRoute = ApiUploadsFileRouteImport.update({
+  id: '/api/uploads/$file',
+  path: '/api/uploads/$file',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$slug': typeof SlugRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
   '/industries': typeof IndustriesRoute
   '/services': typeof ServicesRoute
   '/technologies': typeof TechnologiesRoute
   '/why-choose-us': typeof WhyChooseUsRoute
+  '/api/blogs': typeof ApiBlogsRoute
+  '/api/solutions': typeof ApiSolutionsRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/insights/': typeof InsightsIndexRoute
   '/products/': typeof ProductsIndexRoute
+  '/api/blog/$slug': typeof ApiBlogSlugRoute
+  '/api/uploads/$file': typeof ApiUploadsFileRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$slug': typeof SlugRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
   '/industries': typeof IndustriesRoute
   '/services': typeof ServicesRoute
   '/technologies': typeof TechnologiesRoute
   '/why-choose-us': typeof WhyChooseUsRoute
+  '/api/blogs': typeof ApiBlogsRoute
+  '/api/solutions': typeof ApiSolutionsRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/insights': typeof InsightsIndexRoute
   '/products': typeof ProductsIndexRoute
+  '/api/blog/$slug': typeof ApiBlogSlugRoute
+  '/api/uploads/$file': typeof ApiUploadsFileRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$slug': typeof SlugRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
   '/industries': typeof IndustriesRoute
   '/services': typeof ServicesRoute
   '/technologies': typeof TechnologiesRoute
   '/why-choose-us': typeof WhyChooseUsRoute
+  '/api/blogs': typeof ApiBlogsRoute
+  '/api/solutions': typeof ApiSolutionsRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/insights/': typeof InsightsIndexRoute
   '/products/': typeof ProductsIndexRoute
+  '/api/blog/$slug': typeof ApiBlogSlugRoute
+  '/api/uploads/$file': typeof ApiUploadsFileRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,62 +186,82 @@ export interface FileRouteTypes {
     | '/'
     | '/$slug'
     | '/about'
+    | '/admin'
     | '/contact'
     | '/expertise'
     | '/industries'
     | '/services'
     | '/technologies'
     | '/why-choose-us'
+    | '/api/blogs'
+    | '/api/solutions'
     | '/insights/$slug'
     | '/products/$slug'
     | '/insights/'
     | '/products/'
+    | '/api/blog/$slug'
+    | '/api/uploads/$file'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/$slug'
     | '/about'
+    | '/admin'
     | '/contact'
     | '/expertise'
     | '/industries'
     | '/services'
     | '/technologies'
     | '/why-choose-us'
+    | '/api/blogs'
+    | '/api/solutions'
     | '/insights/$slug'
     | '/products/$slug'
     | '/insights'
     | '/products'
+    | '/api/blog/$slug'
+    | '/api/uploads/$file'
   id:
     | '__root__'
     | '/'
     | '/$slug'
     | '/about'
+    | '/admin'
     | '/contact'
     | '/expertise'
     | '/industries'
     | '/services'
     | '/technologies'
     | '/why-choose-us'
+    | '/api/blogs'
+    | '/api/solutions'
     | '/insights/$slug'
     | '/products/$slug'
     | '/insights/'
     | '/products/'
+    | '/api/blog/$slug'
+    | '/api/uploads/$file'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SlugRoute: typeof SlugRoute
   AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
   ContactRoute: typeof ContactRoute
   ExpertiseRoute: typeof ExpertiseRoute
   IndustriesRoute: typeof IndustriesRoute
   ServicesRoute: typeof ServicesRoute
   TechnologiesRoute: typeof TechnologiesRoute
   WhyChooseUsRoute: typeof WhyChooseUsRoute
+  ApiBlogsRoute: typeof ApiBlogsRoute
+  ApiSolutionsRoute: typeof ApiSolutionsRoute
   InsightsSlugRoute: typeof InsightsSlugRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
+  ApiBlogSlugRoute: typeof ApiBlogSlugRoute
+  ApiUploadsFileRoute: typeof ApiUploadsFileRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -220,6 +285,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -264,6 +336,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WhyChooseUsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/blogs': {
+      id: '/api/blogs'
+      path: '/api/blogs'
+      fullPath: '/api/blogs'
+      preLoaderRoute: typeof ApiBlogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/solutions': {
+      id: '/api/solutions'
+      path: '/api/solutions'
+      fullPath: '/api/solutions'
+      preLoaderRoute: typeof ApiSolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/insights/': {
       id: '/insights/'
       path: '/insights'
@@ -292,6 +378,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/blog/$slug': {
+      id: '/api/blog/$slug'
+      path: '/api/blog/$slug'
+      fullPath: '/api/blog/$slug'
+      preLoaderRoute: typeof ApiBlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/uploads/$file': {
+      id: '/api/uploads/$file'
+      path: '/api/uploads/$file'
+      fullPath: '/api/uploads/$file'
+      preLoaderRoute: typeof ApiUploadsFileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -299,16 +399,21 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SlugRoute: SlugRoute,
   AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
   ContactRoute: ContactRoute,
   ExpertiseRoute: ExpertiseRoute,
   IndustriesRoute: IndustriesRoute,
   ServicesRoute: ServicesRoute,
   TechnologiesRoute: TechnologiesRoute,
   WhyChooseUsRoute: WhyChooseUsRoute,
+  ApiBlogsRoute: ApiBlogsRoute,
+  ApiSolutionsRoute: ApiSolutionsRoute,
   InsightsSlugRoute: InsightsSlugRoute,
   ProductsSlugRoute: ProductsSlugRoute,
   InsightsIndexRoute: InsightsIndexRoute,
   ProductsIndexRoute: ProductsIndexRoute,
+  ApiBlogSlugRoute: ApiBlogSlugRoute,
+  ApiUploadsFileRoute: ApiUploadsFileRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

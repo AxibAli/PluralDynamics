@@ -3,6 +3,7 @@ import { ArrowDown, ArrowUpRight, BarChart3, BrainCircuit, Cloud, Code2, Compass
 import { Eyebrow, Reveal } from "./Layout";
 import { ContactForm } from "./Sections";
 import { resolveItem, serviceCategories, splitTitle, type ServiceCategory } from "@/lib/services";
+import { useI18n } from "@/i18n";
 
 const wrap = "mx-auto max-w-7xl px-5 lg:px-8";
 
@@ -22,6 +23,7 @@ export const categoryIcons: Record<string, LucideIcon> = {
 };
 
 function ServiceVisual({ Icon, title, points, n }: { Icon: LucideIcon; title: string; points: string[]; n: number }) {
+  const { t } = useI18n();
   return (
     <div className="group relative aspect-[5/4] overflow-hidden rounded-[2rem] border border-ink-border bg-ink text-ink-foreground shadow-card">
       <div className="grid-lines absolute inset-0 opacity-70" />
@@ -32,9 +34,9 @@ function ServiceVisual({ Icon, title, points, n }: { Icon: LucideIcon; title: st
           <Icon className="h-8 w-8" />
         </div>
         <div>
-          <div className="font-display text-2xl font-bold md:text-3xl">{title}</div>
+          <div className="font-display text-2xl font-bold md:text-3xl">{t(title)}</div>
           <div className="mt-5 flex flex-wrap gap-2" aria-hidden="true">
-            {points.slice(0, 3).map((p) => <span key={p} className="rounded-full border border-ink-border bg-ink-2/80 px-3 py-1.5 text-xs font-semibold text-ink-muted backdrop-blur">{p}</span>)}
+            {points.slice(0, 3).map((p) => <span key={p} className="rounded-full border border-ink-border bg-ink-2/80 px-3 py-1.5 text-xs font-semibold text-ink-muted backdrop-blur">{t(p)}</span>)}
           </div>
         </div>
       </div>
@@ -43,9 +45,10 @@ function ServiceVisual({ Icon, title, points, n }: { Icon: LucideIcon; title: st
 }
 
 export function ServiceCategoryPage({ cat }: { cat: ServiceCategory }) {
+  const { t } = useI18n();
   const Icon = categoryIcons[cat.slug] ?? Code2;
   const items = cat.items.map(resolveItem);
-  const [a, b] = splitTitle(cat.title);
+  const [a, b] = splitTitle(t(cat.title));
   return (
     <>
       {/* Hero */}
@@ -56,26 +59,26 @@ export function ServiceCategoryPage({ cat }: { cat: ServiceCategory }) {
           <div>
             <Eyebrow>Our Services</Eyebrow>
             <h1 className="reveal mt-5 text-5xl font-bold leading-[1.02] md:text-7xl"><span className="text-primary">{a}</span>{b}</h1>
-            <p className="reveal mt-6 text-2xl font-semibold leading-snug" style={{ animationDelay: "80ms" }}>{cat.headline}</p>
-            <p className="reveal mt-5 max-w-2xl text-lg leading-relaxed text-ink-muted" style={{ animationDelay: "140ms" }}>{cat.intro}</p>
+            <p className="reveal mt-6 text-2xl font-semibold leading-snug" style={{ animationDelay: "80ms" }}>{t(cat.headline)}</p>
+            <p className="reveal mt-5 max-w-2xl text-lg leading-relaxed text-ink-muted" style={{ animationDelay: "140ms" }}>{t(cat.intro)}</p>
             <div className="reveal mt-9 flex flex-wrap gap-4" style={{ animationDelay: "200ms" }}>
               <a href="#contact" className="inline-flex -skew-x-12 bg-primary px-8 py-4 shadow-glow transition-transform hover:-translate-y-0.5">
-                <span className="inline-flex skew-x-12 items-center gap-2 font-bold text-primary-foreground">Get a free quote <ArrowUpRight className="h-5 w-5" /></span>
+                <span className="inline-flex skew-x-12 items-center gap-2 font-bold text-primary-foreground">{t("Get a free quote")} <ArrowUpRight className="h-5 w-5 rtl:-scale-x-100" /></span>
               </a>
             </div>
           </div>
           {/* In-page index doubles as the hero visual */}
-          <nav aria-label={`${cat.title} services`} className="reveal rounded-[2rem] border border-ink-border bg-ink-2/70 p-6 backdrop-blur" style={{ animationDelay: "160ms" }}>
+          <nav aria-label={t(cat.title)} className="reveal rounded-[2rem] border border-ink-border bg-ink-2/70 p-6 backdrop-blur" style={{ animationDelay: "160ms" }}>
             <div className="mb-4 flex items-center gap-3">
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary text-primary-foreground"><Icon className="h-5 w-5" /></span>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-ink-muted">What we offer</span>
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-ink-muted">{t("What we offer")}</span>
             </div>
             <ol className="divide-y divide-ink-border">
               {items.map((it, i) => (
                 <li key={it.id}>
                   <a href={`#${it.id}`} className="group flex items-center gap-4 py-3.5 font-semibold transition-colors hover:text-primary">
                     <span className="font-display text-sm text-primary">{String(i + 1).padStart(2, "0")}</span>
-                    <span className="flex-1">{it.title}</span>
+                    <span className="flex-1">{t(it.title)}</span>
                     <ArrowDown className="h-4 w-4 text-ink-muted transition-transform group-hover:translate-y-0.5 group-hover:text-primary" />
                   </a>
                 </li>
@@ -93,15 +96,15 @@ export function ServiceCategoryPage({ cat }: { cat: ServiceCategory }) {
               <ServiceVisual Icon={Icon} title={it.title} points={it.points} n={i + 1} />
             </Reveal>
             <Reveal delay={100}>
-              <div className="text-sm font-bold uppercase tracking-[0.2em] text-primary">{String(i + 1).padStart(2, "0")} · {cat.title}</div>
-              <h2 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">{it.title}</h2>
-              {it.summary && <p className="mt-4 text-xl font-semibold leading-snug">{it.summary}</p>}
-              {it.body.map((p) => <p key={p.slice(0, 32)} className="mt-4 text-lg leading-relaxed text-muted-foreground">{p}</p>)}
+              <div className="text-sm font-bold uppercase tracking-[0.2em] text-primary">{String(i + 1).padStart(2, "0")} · {t(cat.title)}</div>
+              <h2 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">{t(it.title)}</h2>
+              {it.summary && <p className="mt-4 text-xl font-semibold leading-snug">{t(it.summary)}</p>}
+              {it.body.map((p) => <p key={p.slice(0, 32)} className="mt-4 text-lg leading-relaxed text-muted-foreground">{t(p)}</p>)}
               {it.points.length > 0 && (
                 <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                   {it.points.map((p) => (
                     <li key={p} className="flex items-start gap-3 font-medium">
-                      <span className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-primary ring-4 ring-primary/15" />{p}
+                      <span className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-primary ring-4 ring-primary/15" />{t(p)}
                     </li>
                   ))}
                 </ul>
@@ -109,11 +112,11 @@ export function ServiceCategoryPage({ cat }: { cat: ServiceCategory }) {
               <div className="mt-9">
                 {it.page ? (
                   <Link to="/$slug" params={{ slug: it.page }} className="group inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-bold transition-colors hover:border-primary hover:text-primary">
-                    Explore {it.title} <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    {t("Explore {name}", { name: t(it.title) })} <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </Link>
                 ) : (
                   <a href="#contact" className="group inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-bold transition-colors hover:border-primary hover:text-primary">
-                    Discuss your project <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    {t("Discuss your project")} <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </a>
                 )}
               </div>
@@ -132,15 +135,16 @@ export function ServiceCategoryPage({ cat }: { cat: ServiceCategory }) {
 }
 
 function RelatedServices({ current }: { current: string }) {
+  const { t } = useI18n();
   return (
     <section className="bg-secondary py-24">
       <div className={wrap}>
         <Eyebrow>Explore More</Eyebrow>
-        <h2 className="mt-4 text-4xl font-bold md:text-5xl">More ways we can help</h2>
+        <h2 className="mt-4 text-4xl font-bold md:text-5xl">{t("More ways we can help")}</h2>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {serviceCategories.filter((c) => c.slug !== current).map((c, i) => {
             const I = categoryIcons[c.slug] ?? Code2;
-            const [a, b] = splitTitle(c.title);
+            const [a, b] = splitTitle(t(c.title));
             return (
               <Reveal key={c.slug} delay={(i % 4) * 60}>
                 <Link to="/$slug" params={{ slug: c.slug }} className="group flex h-full items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-primary">
@@ -158,15 +162,16 @@ function RelatedServices({ current }: { current: string }) {
 
 /** Grid of all service categories, used on /services. */
 export function ServiceCategoriesGrid() {
+  const { t } = useI18n();
   return (
     <section className="py-24">
       <div className={wrap}>
         <Eyebrow>What We Do</Eyebrow>
-        <h2 className="mt-4 max-w-3xl text-4xl font-bold md:text-5xl">Everything you need to build, run and grow your software</h2>
+        <h2 className="mt-4 max-w-3xl text-4xl font-bold md:text-5xl">{t("Everything you need to build, run and grow your software")}</h2>
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {serviceCategories.map((c, i) => {
             const I = categoryIcons[c.slug] ?? Code2;
-            const [a, b] = splitTitle(c.title);
+            const [a, b] = splitTitle(t(c.title));
             return (
               <Reveal key={c.slug} delay={(i % 3) * 70}>
                 <Link to="/$slug" params={{ slug: c.slug }} className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary">
@@ -175,9 +180,9 @@ export function ServiceCategoriesGrid() {
                     <ArrowUpRight className="h-5 w-5 text-primary transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </div>
                   <h3 className="mt-6 text-2xl font-bold"><span className="text-primary">{a}</span>{b}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.headline}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t(c.headline)}</p>
                   <ul className="mt-5 flex flex-wrap gap-2">
-                    {c.items.map((it) => <li key={it.id} className="rounded-full border border-border px-3 py-1 text-xs font-semibold text-muted-foreground">{it.title}</li>)}
+                    {c.items.map((it) => <li key={it.id} className="rounded-full border border-border px-3 py-1 text-xs font-semibold text-muted-foreground">{t(it.title)}</li>)}
                   </ul>
                 </Link>
               </Reveal>

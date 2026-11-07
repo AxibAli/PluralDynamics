@@ -1,12 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/site/Layout";
 import { ProductsIndex, Cta } from "@/components/site/Sections";
 import { ClientStats, Platforms } from "@/components/site/Trust";
 import { listSolutions } from "@/lib/cms";
-import { Loading, LoadError } from "@/components/site/Loading";
 
 export const Route = createFileRoute("/products/")({
+  loader: () => listSolutions(),
   head: () => ({
     meta: [
       { title: "Our Products: GymFlex, HotelPro & More | Plural Dynamics" },
@@ -21,12 +20,10 @@ export const Route = createFileRoute("/products/")({
 });
 
 function Page() {
-  // Fetched in the browser so the prerendered page stays current after dashboard edits.
-  const solutions = useQuery({ queryKey: ["solutions"], queryFn: listSolutions, staleTime: 30_000 });
   return (
     <SiteLayout>
       <PageHero eyebrow="Products" title="Our Products" desc="Ready-to-run software for gyms, hotels, training teams and more. Explore GymFlex, HotelPro, InstiSync, Nooré, Repairbox and topE by Plural Dynamics." />
-      {solutions.isPending ? <Loading /> : solutions.isError ? <LoadError /> : <ProductsIndex solutions={solutions.data} />}
+      <ProductsIndex solutions={Route.useLoaderData()} />
       <div className="pt-24" />
       <ClientStats />
       <Platforms />

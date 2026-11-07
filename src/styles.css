@@ -191,3 +191,8 @@
 
 /* The supplied logo has white lettering; flip it to dark in light theme while keeping the red mark red. */
 :root:not(.dark) .logo-adapt { filter: invert(1) hue-rotate(180deg) saturate(1.4); }
+
+/* Arabic: a font with Arabic letters, and no negative letter-spacing (it breaks joined script). */
+html[lang="ar"] { --font-sans: "Noto Sans Arabic", "Manrope", ui-sans-serif, system-ui, sans-serif; --font-display: "Noto Sans Arabic", "Space Grotesk", sans-serif; }
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4 { letter-spacing: 0; }
+html[lang="ar"] [class*="tracking-"] { letter-spacing: 0; }

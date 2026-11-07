@@ -50,15 +50,14 @@ export const leader = {
   photo: azib,
 };
 
-// Contact details supplied by the client. Phones marked `placeholder: true` are dummies
-// the client will replace; only the Firenze number is real so far.
+// Contact details supplied by the client.
 export type Office = { city: string; country: string; address: string; phone: string; placeholder?: boolean };
 export const contact = {
   email: "official@pluraldynamics.com",
   offices: [
-    { city: "Tübingen", country: "Germany", address: "Fichtenweg 13, Tübingen, Germany", phone: "+49 7071 000 0000", placeholder: true },
+    { city: "Tübingen", country: "Germany", address: "Fichtenweg 13, Tübingen, Germany", phone: "+49 1515 6228596" },
     { city: "Firenze", country: "Italy", address: "Via di Quarto 1, Firenze, Italy", phone: "+39 344 658 0188" },
-    { city: "Karachi", country: "Pakistan", address: "H-3115 King Cottages, Gulistan-e-Johar Block 7, Karachi, Pakistan", phone: "+92 21 0000 0000", placeholder: true },
+    { city: "Karachi", country: "Pakistan", address: "H-3115 King Cottages, Gulistan-e-Johar Block 7, Karachi, Pakistan", phone: "+92 331 3006368" },
   ] satisfies Office[],
 };
 
